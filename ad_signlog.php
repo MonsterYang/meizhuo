@@ -38,10 +38,17 @@
 
 ?>
 <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
-<tr><td>&nbsp;</td><td><a href="http://localhost/meizhuosignsystem/ad_cleansignlog.php" onClick="return confirm('确定清空签到日志？')">清空签到日志</a></td></tr>
+<tr><td>&nbsp;</td><td><a href="ad_cleansignlog.php" onClick="return confirm('确定清空签到日志？')">清空签到日志</a></td></tr>
 </table>
 
-
+<?php
+	if(isset($_GET['code'])){
+		switch($_GET['code']==1){
+			case 1: echo "<script language='javascript'>window.alert('数据库出错！')</script>";break;
+			case 0: echo "<script language='javascript'>window.alert('签到日志为空')</script>";break;
+		}
+	}
+?>
 
 </body>
 </html>

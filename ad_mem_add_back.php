@@ -19,16 +19,16 @@
 	$b=$a->insert($name,$phone,$wwords);
 	if($b==1){
 		sqlclose();
-		header("Refresh: 0;url=http://localhost/meizhuosignsystem/ad_membertable.php");
-		die("<script language='javascript'>window.alert('添加成功！')</script>");
+		header("Location:ad_membertable.php?code=1");
+		//die("<script language='javascript'>window.alert('添加成功！')</script>");
 	}elseif($b==2){
 		sqlclose();
-		header("Refresh: 0;url=http://localhost/meizhuosignsystem/ad_membertable.php");
-		die("<script language='javascript'>window.alert('他已经工作室成员啦！')</script>");
+		header("Location:ad_membertable.php?code=2");
+		//die("<script language='javascript'>window.alert('他已经工作室成员啦！')</script>");
 	}else{
 		sqlclose();
-		header("Refresh: 0;url=http://localhost/meizhuosignsystem/ad_membertable.php");
-		die("<script language='javascript'>window.alert('数据库出错...')</script>");
+		header("Location:ad_membertable.php?code=0");
+		//die("<script language='javascript'>window.alert('数据库出错...')</script>");
 	}
 
 	sqlclose();

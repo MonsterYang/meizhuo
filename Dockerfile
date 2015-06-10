@@ -1,4 +1,4 @@
-# Memcached
+# Assassinpxdxt
 #
 # VERSION       2.2
 
@@ -11,11 +11,11 @@ MAINTAINER Victor Coisne victor.coisne@dotcloud.com
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
 RUN apt-get update
 
-# install memcached
-RUN apt-get install -y memcached
+# install meizhuo
+RUN apt-get install -y meizhuo
 
-# Launch memcached when launching the container
-ENTRYPOINT ["memcached"]
+# Launch meizhuo when launching the container
+ENTRYPOINT ["meizhuo"]
 
 # run memcached as the daemon user
 USER yxt

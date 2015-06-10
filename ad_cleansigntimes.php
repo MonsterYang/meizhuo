@@ -27,8 +27,9 @@
 	$b=$a->clearsigntimes();
 	if($b==0){
 		sqlclose();
-		header("Refresh: 0;url=http://localhost/meizhuosignsystem/ad_membertable.php");
-		die("<script language='javascript'>window.alert('数据库出错.....')</script>");
+		//header("Refresh: 0;url=http://localhost/meizhuosignsystem/ad_membertable.php");
+		//die("<script language='javascript'>window.alert('数据库出错.....')</script>");
+		header("Location:ad_membertable.php?code=0");
 	}else{
 		sqlclose();
 		header("Location:ad_membertable.php");

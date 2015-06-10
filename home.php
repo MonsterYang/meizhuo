@@ -96,5 +96,17 @@ setTimeout("thistime()",1000);
 		<div id="clock2" class="clock2"></div>
 	</div>
 </div>
+
+<?php
+  if(isset($_GET['code'])){
+    switch($_GET['code']){
+      case 0: echo "<script type='text/javascript'>alert('数据库出错')</script>";break;
+      case 1: echo "<script type='text/javascript'>alert('今天您已经签到啦！上次签到时间:".$_GET['time']."')</script>";break;
+      case 2: echo "<script type='text/javascript'>alert('数据库找不到您的信息，请确定输入..')</script>";break;
+    }
+  }
+?>
+
+
 </body>
 </html>

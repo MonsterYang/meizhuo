@@ -38,14 +38,23 @@
 			echo '<td>'.$table->data[$i]['historyts'].'</td>';
 			echo '<td>'.$table->data[$i]['finaldata'].'</td>';
 			echo '<td>'.$table->data[$i]['wwords'].'</td>';
-			echo "<td><a href='http://localhost/meizhuosignsystem/ad_mem_reset.php?name={$table->data[$i]['name']}&phone={$table->data[$i]['phone']}&wwords={$table->data[$i]['wwords']}'>修改成员信息</a></td>";
-			echo "<td><a href='http://localhost/meizhuosignsystem/ad_mem_delete.php?name={$table->data[$i]['name']}' onClick=".'"'."return confirm('确定移除成员&nbsp;&nbsp;{$table->data[$i]['name']}?')".'"'."  >移除成员</a></td>";
+			echo "<td><a href='ad_mem_reset.php?name={$table->data[$i]['name']}&phone={$table->data[$i]['phone']}&wwords={$table->data[$i]['wwords']}'>修改成员信息</a></td>";
+			echo "<td><a href='ad_mem_delete.php?name={$table->data[$i]['name']}' onClick=".'"'."return confirm('确定移除成员&nbsp;&nbsp;{$table->data[$i]['name']}?')".'"'."  >移除成员</a></td>";
 			echo "</tr>";
 		}
 	}
 ?>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td><a href="http://localhost/meizhuosignsystem/ad_mem_add.php">增加成员</a></td><td><a href="http://localhost/meizhuosignsystem/ad_cleansigntimes.php" onClick="return confirm('确定清空签到次数？')">清空签到次数</a></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td><a href="ad_mem_add.php">增加成员</a></td><td><a href="ad_cleansigntimes.php" onClick="return confirm('确定清空签到次数？')">清空签到次数</a></td></tr>
 
 </table>
+<?php
+	if(isset($_GET['code'])){
+		switch($_GET['code']){
+			case 0: echo "<script language='javascript'>window.alert('数据库出错！')</script>"; break;
+			case 1: echo "<script language='javascript'>window.alert('添加成功！')</script>";break;
+			case 2: echo "<script language='javascript'>window.alert('他已经工作室成员啦！')</script>";break;
+		}
+	}
+?>
 </body>
 </html>

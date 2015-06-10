@@ -13,10 +13,12 @@
 	$a=new CRUDrobot;
 	$b=$a->ndelete($name);
 	if($b==1){
+		sqlcloss();
 		header('Location:ad_membertable.php');
 	}else{
-		header("Refresh: 0;url=http://localhost/meizhuosignsystem/ad_membertable.php");
-		die("<script language='javascript'>window.alert('数据库出错！')</script>");
+		sqlcloss();
+		header("Location:ad_membertable.php?code=0");
+		//die("<script language='javascript'>window.alert('数据库出错！')</script>");
 	}
 	sqlcloss();
 ?>

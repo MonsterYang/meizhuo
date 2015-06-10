@@ -3,8 +3,8 @@
 	$a=new session; 
 	$b=$a->session_ad();
 	if($b==0){
-		header("Refresh: 0;url=http://localhost/meizhuosignsystem/ad_denglu.php");
-		die("<script language='javascript'>window.alert('请先登录')</script>");
+		header("Location:ad_denglu.php");
+		//die("<script language='javascript'>window.alert('请先登录')</script>");
 	}//权限判断
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -50,8 +50,9 @@
 	//为了前台方便使用CSS，所以表格在这里解析打印
 	sqlclose();
 	if(!is_object($table)){
-		header("Refresh: 0;url=http://localhost/meizhuosignsystem/ad_signlog.php");
-		die("<script language='javascript'>window.alert('签到日志为空')</script>");
+		//header("Refresh: 0;url=http://localhost/meizhuosignsystem/ad_signlog.php");
+		//die("<script language='javascript'>window.alert('签到日志为空')</script>");
+		header("Location:ad_signlog.php?code=0");
 	}
 ?>
 

@@ -19,17 +19,19 @@
 	$b=$a->ad_insert($name,$password);
 
 	if($b==2){
-		header("Refresh: 0;url=http://localhost/meizhuosignsystem/ad_admintable.php");
+		// header("Refresh: 0;url=http://localhost/meizhuosignsystem/ad_admintable.php");
 		sqlclose();
-		die("<script language='javascript'>window.alert('已经存在该管理员')</script>");
+		// die("<script language='javascript'>window.alert('已经存在该管理员')</script>");
+		header("Location:ad_admintable.php?code=1");
 	}elseif($b==0){
-		header("Refresh: 0;url=http://localhost/meizhuosignsystem/ad_admintable.php");
 		sqlclose();
-		die("<script language='javascript'>window.alert('数据库出错')</script>");
+		//die("<script language='javascript'>window.alert('数据库出错')</script>");
+		header("Location:ad_admintable.php?code=2");
 	}else{
-		header("Refresh: 0;url=http://localhost/meizhuosignsystem/ad_admintable.php");
+		//header("Refresh: 0;url=http://localhost/meizhuosignsystem/ad_admintable.php");
 		sqlclose();
-		die("<script language='javascript'>window.alert('添加成功')</script>");
+		//die("<script language='javascript'>window.alert('添加成功')</script>");
+		header("Location:ad_admintable.php?code=3");
 	}
 
 	sqlclose();

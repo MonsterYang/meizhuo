@@ -14,8 +14,9 @@
 		header("Location:ad_signlog.php");
 	}else{
 		sqlclose();
-		header("Refresh: 0;url=http://localhost/meizhuosignsystem/ad_signlog.php");
-		die("<script language='javascript'>window.alert('数据库出错...')</script>");
+		//header("Refresh: 0;url=http://localhost/meizhuosignsystem/ad_signlog.php");
+		//die("<script language='javascript'>window.alert('数据库出错...')</script>");
+		header("Location:ad_signlog.php?code=1");
 	}
 
 	sqlclose();

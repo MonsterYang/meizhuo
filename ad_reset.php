@@ -3,8 +3,8 @@
 	$a=new session; 
 	$b=$a->session_ad();
 	if($b==0){
-		header("Refresh: 0;url=http://localhost/meizhuosignsystem/ad_denglu.php");
-		die("<script language='javascript'>window.alert('请先登录')</script>");
+		header("Location:ad_denglu.php");
+		//die("<script language='javascript'>window.alert('请先登录')</script>");
 	}//权限判断
 	sqlclose();
 ?>

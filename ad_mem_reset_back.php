@@ -35,8 +35,8 @@
 		header('Location:ad_membertable.php');
 	}else{
 		sqlclose();
-		header("Refresh: 0;url=http://localhost/meizhuosignsystem/ad_membertable.php");
-		die("<script language='javascript'>window.alert('数据库出错')</script>");
+		header("Location:ad_membertable.php?code=0");
+		//die("<script language='javascript'>window.alert('数据库出错')</script>");
 	}
 	sqlclose();
 ?>

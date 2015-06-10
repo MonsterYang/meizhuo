@@ -6,7 +6,7 @@ services:
     - redis
 
 env:
-    - MYENV = "hello"
+    - MYENV = "meizhuo"
 
 install:
     - echo $MYENV

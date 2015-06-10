@@ -34,14 +34,23 @@
 			echo "<tr>";
 			echo '<td>'.$table->data[$i]['name'].'</td>';
 			echo '<td>'.$table->data[$i]['passw'].'</td>';
-			echo "<td><a href='http://localhost/meizhuosignsystem/ad_reset.php?adname={$table->data[$i]['name']}' >修改管理员信息</a></td>";
-			echo "<td><a href='http://localhost/meizhuosignsystem/ad_delete.php?name={$table->data[$i]['name']}' onClick=".'"'."return confirm('确定移除管理员{$table->data[$i]['name']}？')".'"'.">移除</a></td>";
+			echo "<td><a href='ad_reset.php?adname={$table->data[$i]['name']}' >修改管理员信息</a></td>";
+			echo "<td><a href='ad_delete.php?name={$table->data[$i]['name']}' onClick=".'"'."return confirm('确定移除管理员{$table->data[$i]['name']}？')".'"'.">移除</a></td>";
 			echo "</tr>"; 
 		}
 	}
 ?>
 
-<tr><td></td><td></td><td><a href='http://localhost/meizhuosignsystem/ad_add.php'>添加管理员</a></td><td></td></tr>
+<tr><td></td><td></td><td><a href='ad_add.php'>添加管理员</a></td><td></td></tr>
 </table>
+<?php
+	if(isset($_GET['code'])){
+		switch($_GET['code']){
+			case 1: echo "<script language='javascript'>window.alert('已经存在该管理员')</script>";break;
+			case 2: echo "<script language='javascript'>window.alert('数据库出错！')</script>";break;
+			case 3: echo "<script language='javascript'>window.alert('添加成功')</script>";break;
+		}
+	}
+?>
 </body>
 </html>

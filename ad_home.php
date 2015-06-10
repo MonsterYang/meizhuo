@@ -3,8 +3,8 @@
 	$a=new session; 
 	$b=$a->session_ad();
 	if($b==0){
-		header("Refresh: 0;url=http://localhost/meizhuosignsystem/ad_denglu.php");
-		die("<script language='javascript'>window.alert('请先登录')</script>");
+		header("Location:ad_denglu.php");
+		//die("<script language='javascript'>window.alert('请先登录')</script>");
 	}//权限判断
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -82,13 +82,13 @@ var timer=setInterval(clock,100);
 		<div class="message">
 			<div class="header"><a href="#">查看签到情况</a></div>
 			<ul>
-			  <li><a href="http://localhost/meizhuosignsystem/ad_signtable.php" target="iframe1">查看签到表</a></li>     
-			  <li><a href="http://localhost/meizhuosignsystem/ad_signlog.php" target="iframe1">查看签到日志</a></li>
+			  <li><a href="ad_signtable.php" target="iframe1">查看签到表</a></li>     
+			  <li><a href="ad_signlog.php" target="iframe1">查看签到日志</a></li>
 			</ul>
 			<div class="header"><a href="#">袂卓成员信息</a></div>
 			<ul>
-			  <li><a href="http://localhost/meizhuosignsystem/ad_admintable.php" target="iframe1">管理员列表</a></li>
-			  <li><a href="http://localhost/meizhuosignsystem/ad_membertable.php" target="iframe1">成员信息列表</a></li>
+			  <li><a href="ad_admintable.php" target="iframe1">管理员列表</a></li>
+			  <li><a href="ad_membertable.php" target="iframe1">成员信息列表</a></li>
 			</ul>
 			<div class="return"><a href="#">返回签到页面</a></div>
 			<ul><li><a href="home.php">返回首页</a></li></ul>

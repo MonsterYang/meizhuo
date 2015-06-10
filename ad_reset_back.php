@@ -31,8 +31,9 @@
 		header("Location:ad_admintable.php");
 	}else{
 		sqlclose();
-		header("Refresh: 0;url=http://localhost/meizhuosignsystem/ad_admintable.php");
-		die("<script language='javascript'>window.alert('数据库出错...')</script>");
+		//header("Refresh: 0;url=http://localhost/meizhuosignsystem/ad_admintable.php");
+		//die("<script language='javascript'>window.alert('数据库出错...')</script>");
+		header("Location:ad_admintable.php?code=2");
 	}
 
 	sqlclose();
