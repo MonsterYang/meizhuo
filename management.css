@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* CSS Document */
+.lookBar{width:100%; height:50px; margin:0 auto; text-align:center; color: #143910; font-size: 20px;}
+.inputstyle{
+	background: url("allow.png") no-repeat 105px center;
+	display:inline-block;
+	width: 150px;
+	height: 40px;
+	font-family: "微软雅黑";
+	font-size: 25px;
+	color: green;
+	text-align: left;
+    padding-left: 30px;
+	margin-top:10px;	
+    box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    border: 2px solid rgba(47,179,106,0.5);
+    border-radius: 20px;
+    transition:0.4s ease;
+    -webkit-transition:0.4s ease;
+    -o-transition:0.4s ease;
+    -moz-transition:0.4s ease;
+}
+.inputstyle:hover{background-position: 110px center; border: 2px solid rgba(47,179,106,1);}
+.lookBar .datenum{width:80px; height:30px; border: 1px solid rgba(146,214,200,1); text-align:center;}
+h1{text-align:center;}
+
+#tableBar,.tableBar{margin:0 auto;text-align: center;}
+#tableBar td{text-align:center; line-height:20px;}
+#tableBar th{background: #cccccc; line-height:30px; width:250px;}
+
+
+.form{margin:50px auto; width:500px; border-radius:25px; box-shadow:0px 0 50px #ccc;
+	-webkit-box-shadow:0px 0 50px #ccc;
+    -moz-box-shadow:0px 0 50px #ccc;
+    -webkit-box-shadow:0px 0 50px #ccc;
+    -moz-box-shadow:0px 0 50px #ccc;    
+}
+.fieldset{border:1px solid #ddd; border-radius:25px; text-align:center;	background: #fff;
+	 background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#EEE), to(#FFFFFF));
+     background: -moz-linear-gradient(0% 40% 90deg,#FFF, #EEE);
+}
+.form form label{font-size:20px;}  
+input{background: #fff; width: 220px; font-size: 14px; color: #555; border: 1px #ddd solid;
+	box-shadow: 0px 0px 4px #aaa;
+    -webkit-box-shadow: 0px 0px 4px #aaa;
+    -moz-box-shadow: 0px 0px 4px #aaa;   
+    -webkit-transition: background 0.3s linear;
+}
+input:hover{
+	transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-o-transform: scale(1.1);
+}
+#key,#newphone,#newwords,#addname,#phone,#wwords,#name{
+     border-radius:5px;	
+	 border:1px solid #CCC;
+	 background-color:transparent;
+}
+#reset{width:70px; height:30px; font-weight:bold; font-size:16px; border-radius:10px; background-color:transparent; 
+	border:2px solid #ccc;
+	transition:0.2s ease-out;
+    -webkit-transition:0.2s ease-out;
+    -o-transition:0.2s ease-out;
+    -moz-transition:0.2s ease-out;
+}	
+#reset:hover{
+    transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+	-o-transform: scale(1.2);		
+	-webkit-box-shadow: 0px 0px 20px #555;
+    -moz-box-shadow: 0px 0px 20px #aaa;
+    box-shadow: 0px 0px 20px #555;
+}
+
+
+/*table.php*/
+.table_main{   /*用于table.php表格输出*/
+	border: solid black;
+	padding: 1px;
+	width: 1000px;
+	margin: 0 auto;
+    text-align: center;
+}
+.tr_main{	/*用于table.php表头与行*/
+	height: 50px;
+	text-align: center;
+}

@@ -1,0 +1,128 @@
+@charset "utf-8";
+/* CSS Document */
+body{background:url("bg.jpg") repeat top center; font-family: "楷体";}
+
+
+*{margin:0px; padding: 0px;}
+
+	
+
+.linestyle{
+	margin:15px auto; 
+	width:1200px; 
+	height:2px; 
+	background-image:linear-gradient(to right,white,#89C6D8,white);
+	border:0px;
+}
+
+
+.formBar,.lookBar,.rootBar{width:1000px; height:200px; margin:0 auto; text-align:center; color: #143910; font-size: 20px;}
+.formBar p{height:50px;line-height:50px;}
+.formBar .tel,.rootBar .root{width: 150px; height: 20px; border: 1px solid rgba(146,214,200,1); padding-left:5px; }
+.inputstyle{
+	background: url("allow.png") no-repeat 105px center;
+	display:inline-block;
+	width: 150px;
+	height: 40px;
+	font-family: "微软雅黑";
+	font-size: 25px;
+	color: green;
+	text-align: left;
+    padding-left: 30px;
+	margin-top:30px;	
+    box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    border: 2px solid rgba(47,179,106,0.5);
+    border-radius: 20px;
+    transition:0.4s ease;
+    -webkit-transition:0.4s ease;
+    -o-transition:0.4s ease;
+    -moz-transition:0.4s ease;
+}
+.formBar a,.lookBar a{text-decoration:none;color: green;}
+.inputstyle:hover{background-position: 110px center; border: 2px solid rgba(47,179,106,1);}
+.lookBar .datenum{width: 80px; height: 20px; border: 1px solid rgba(146,214,200,1); margin-left:0px; text-align:center;}
+.clockstyle{position:relative; margin: 50px auto; text-align: center;}
+.clockstyle .clock1{position:absolute;visibility:visible;font-family:Arial;color:blue;font-size:50px;top:10px;left:380px;}
+.clockstyle .clock2{position:absolute;visibility:visible;font-family:Arial;color:#DDF0F7;font-size:50px;top:12px;left:382px;}
+
+
+#tableBar,.tableBar{margin:0 auto;text-align: center;}
+#tableBar td{text-align:center; line-height:20px;}
+#tableBar th{background: #cccccc; line-height:30px; width:250px;}
+
+
+.leftBar{
+	width:230px;; 
+	height:540px; 
+	border:2px solid #9A9A9A; 
+	float:left; 
+	border-radius:20px; 
+	margin-top:50px;
+	margin-left:2px
+}
+.leftBar span{
+	 display:block;
+     font-size:24px;
+	 color:#333;
+	 text-align:center;
+	 font-weight:bold;
+	 line-height:50px;
+}
+.message{width:100%;height:250px;}
+.header,.return{
+ 	border:1px solid #ccc;
+ 	border-bottom: 1px solid transparent;
+ 	border-radius: 10px 10px 0 0;
+ 	transition:0.2s ease-out;
+    -webkit-transition:0.2s ease-out;
+    -o-transition:0.2s ease-out;
+    -moz-transition:0.2s ease-out;
+	text-align:center;
+	height:40px;
+	line-height:40px;
+	margin-top:2px;	
+}
+.header:hover,.return:hover{
+	-webkit-box-shadow: 0px 0px 20px #ccc inset;
+    -moz-box-shadow: 0px 0px 20px #ccc inset;
+    box-shadow: 0px 0px 20px #ccc inset;
+}	 
+.message ul{
+      margin:10px;
+	  padding-left:20px;
+	  list-style-image:url(li_bg.gif);
+	  list-style-position:inherit;
+	  height:auto;
+}	
+.message ul li{
+     margin-top:10px;
+	 margin-left: 50px;
+	 border-bottom: 1px dotted #ccc;
+	 transition:0.5s ease-out;
+	 -webkit-transition:0.5s ease-out;
+	 -moz-transition:0.5s ease-out;
+	 -o-transition:0.5s ease-out;
+}
+.message li a,.header a,.return a{color:#000; text-decoration:none; font-size:22px;}
+.message li a{font-size:18px;}
+.message li a:hover{color:red;}
+.message ul li:hover{
+	 transform:translateX(2px) /*rotate(-5deg)*/ scale(1.2,1.2);
+	 -webkit-transform:translateX(2px) /*rotate(-5deg)*/ scale(1.2,1.2);
+	 -moz-transform:translateX(2px) /*rotate(-5deg)*/ scale(1.2,1.2);
+	 -o-transform:translateX(2px) /*rotate(-5deg)*/ scale(1.2,1.2);	 
+}
+.clockBar{position:relative; top:100px; left:44px; text-align: center; width:100%; height:45px;}
+.clockBar .clock1{position:absolute;visibility:visible;font-family:Arial;color:green;font-size:30px;top:5px;left:5px;}
+.clockBar .clock2{position:absolute;visibility:visible;font-family:Arial;color:#DDDDDD;font-size:30px;top:7px;left:7px;}
+.topBar{ width:1040px; height:180px; margin:80px auto 0px; text-align: center;background:url(mz.png) no-repeat 440px 0px;}
+.topBar h1{color: #89C6D8; font-weight: bold; line-height: 50px;padding-top:70px;}
+.topBar p{font-size: 30px; font-family: "cursive"; line-height: 50px;}
+
+
+.rightBar{width:1040px; height:100%; float:left;}
+.rightBar .topBar{margin:45px auto 0; height:105px;}

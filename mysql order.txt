@@ -1,0 +1,152 @@
+ create table numbermessage(           id int primary key auto_increment,    name varchar(10) not null,            ip varchar(15) not null,              tmtimes int(16) not null,             lmtimes int(16) not null,             historyts int(32) not null,           finaldata varchar(30) not null,       welcomewords varchar(1024) not null);
+
+
+ create table numbermessage(  name varchar(16) not null,   phone int(8) not null,       tmtimes int(16) not null,    lmtimes int (16) not null,   historyts int(32) not null,  finaldata varchar(30) not null,      wwords varchar(64) not null  );                          
+
+
+ insert into numbermessage(name,ip,tmtimes,lmtimes,historyts,finaldata,welcomewords) values ('','192.168.1.132','0','0','0','0','');
+
+
+
+alter table signlog  AUTO_INCREMENT=0; 
+
+
+
+ update numbermessage set tmtimes=0,lmtimes=0,historyts=0,finaldata=0 where id=1; 
+
+
+
+
+
+	/*header("connet_type:text/html;charset=utf-8");
+	require_once('robot.php');
+	
+	$key=$_POST['key'];//µÃµ½ÊäÈëµÄÄÚÈÝ
+	if($key==0){
+		header("Refresh: 0;url=http://localhost/meizhuosignsystem/home.php");
+		//header("Location:home.php");
+		die("<script language='javascript'>window.alert('Ã»ÓÐÊäÈëÈÎºÎÄÚÈÝ£¡')</script>");
+	}
+
+	$a=new timerobot();
+	$t=$a->systemtime();//µÃµ½ÏµÍ³Ê±¼ä
+	//var_dump($t);
+	//var_dump($key);
+
+	$mysqli=new MySQLi("localhost","root","q662230399","meizhuosignsql");
+	if($mysqli->connect_error){
+		die("<script language='javascript'>window.alert('Êý¾Ý¿âÁ¬½ÓÊ§°Ü!$mysqli->connect_error')</script>");
+	}else{
+		$b=$mysqli->query("set names utf8");
+		if(!$b){
+			echo "<script language='javascript'>window.alert('×ÖÌå¸ñÊ½ÉèÖÃÊ§°Ü!$mysqli->connect_error')</script>".$mysqli->error;
+		}
+	}
+
+	//ÅÐ¶ÏÊÇ·ñÊÇñÇ×¿³ÉÔ±
+	$b=0;
+	$sml="select phone from numbermessage;";
+	$cphone=$mysqli->query($sml);
+	if(!$cphone){
+		header("Refresh: 3;url=http://localhost/meizhuosignsystem/home.php");
+		die("$cphone->error");
+	}
+	while($phone=$cphone->fetch_row()){
+		if($phone[0]==$key){
+			$b=1;
+			break;
+		}
+	}
+	if($b==0){
+		//ÕâÀïÉèÖÃÒ»¸ö½éÉÜñÇ×¿µÄÍøÒ³
+		$cphone->free();
+		header("Refresh: 0;url=http://localhost/meizhuosignsystem/home.php");
+		die("<script language='javascript'>window.alert('Êý¾Ý¿âÖÐÃ»ÓÐÄúµÄÐÅÏ¢£¬ÊÇ²»ÊÇÐ´´íºÅÂëÀ²£¿¹þ')</script>");
+	}
+	$cphone->free();
+
+
+	//ÅÐ¶Ï¸Ã³ÉÔ±ÊÇ·ñÒÑ¾­Ç©¹ýµ½
+	$b=0;
+	$sml="select finaldata from numbermessage where phone='$key' limit 0,1;";
+	$fdata=$mysqli->query($sml);
+	if(!$fdata){
+		header("Refresh: 0;url=http://localhost/meizhuosignsystem/home.php");
+		die("<script language='javascript'>window.alert('Êý¾Ý¿â³öÎÊÌâÀ²~~~sory£¡$fdata->error')</script>");
+	}
+	$data=$fdata->fetch_row();
+	if($data[0][5]==$t[5]&&$data[0][6]==$t[6]&&$data[0][8]==$t[8]&&$data[0][9]==$t[9]){
+		if(strlen($data[0])==26){
+			if(strlen($t)==26){
+				if($data[0][25]==$t[25]){
+					$fdata->free();
+					header("Refresh: 0;url=http://localhost/meizhuosignsystem/home.php");
+					die("<script language='javascript'>window.alert('ÒÑ¾­Ç©¹ýµ½À²£¡¹þ')</script>");
+				}
+			}
+			if(strlen($t)==27){
+				if($data[0][25]==$t[26]){
+					$fdata->free();
+					header("Refresh: 0;url=http://localhost/meizhuosignsystem/home.php");
+					die("<script language='javascript'>window.alert('ÒÑ¾­Ç©¹ýµ½À²£¡¹þ')</script>");
+				}
+			}
+		}
+		if(strlen($data[0])==27){
+			if(strlen($t)==26){
+				if($data[0][26]==$t[25]){
+					$fdata->free();
+					header("Refresh: 0;url=http://localhost/meizhuosignsystem/home.php");
+					die("<script language='javascript'>window.alert('ÒÑ¾­Ç©¹ýµ½À²£¡¹þ')</script>");
+				}
+			}
+			if(strlen($t)==27){
+				if($data[0][26]==$t[26]){
+					$fdata->free();
+					header("Refresh: 0;url=http://localhost/meizhuosignsystem/home.php");
+					die("<script language='javascript'>window.alert('ÒÑ¾­Ç©¹ýµ½À²£¡¹þ')</script>");
+				}
+			}
+		}
+	}
+	$fdata->free();
+
+	//ÅÐ¶ÏÍê±Ï£¬½øÐÐÇ©µ½  »Ø¹ö»úÖÆ
+	//»ñÈ¡Ãû×Ö  Ð´Èëlog
+	$sml2="select name from numbermessage where phone='$key' limit 0,1;";
+	$cname=$mysqli->query($sml2);
+	if(!$cname){
+		header("Refresh: 3;url=http://localhost/meizhuosignsystem/home.php");
+		die("$cname->error");
+	}
+	$name=$cname->fetch_row();
+	$cname->free();
+
+	$sql="update numbermessage set finaldata='$t',tmtimes=tmtimes+1,historyts=historyts+1 where phone='$key'";
+	$sql2="insert into signlog (name,signdata) value('$name[0]','$t')";
+	$mysqli->autocommit(false);
+	$b=$mysqli->query($sql);
+	$b2=$mysqli->query($sql2);
+	if(!$b||!$b2){
+		//echo "Ç©µ½Ê§°Ü,3Ãëºó×Ô¶¯·µ»Ø".'<br/>'.$mysqli->error;
+		$mysqli->rollback();
+		header("Refresh: 0;url=http://localhost/meizhuosignsystem/home.php");
+		die("<script language='javascript'>window.alert('Ç©µ½Ê§°ÜÀ²~sory£¡Êý¾Ý¿â³öÎÊÌâÀ²£¡$mysqli->error')</script>");
+	}else{
+		$mysqli->commit();
+		//echo "";
+		header("Location:signsuccess.php");
+	}
+
+	$mysqli->close();
+
+
+	/*$sql="insert into numbermessage(name,nletters,ip,phone,tmtimes,lmtimes,historyts,finaldata,welcomewords) values('ÑòÎýÌí','yct','192.168.1.112',1772,'0','0','0','0','»¶Ó­Ìì¸ç£¡')";
+	$b=$mysqli->query($sql);
+	if(!$b){
+		die($mysqli->error);
+	}
+	$mysqli->close();*/
+
+	//$a=$_SERVER['REMOTE_ADDR'];
+	//var_dump($a);*/

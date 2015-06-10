@@ -1,0 +1,14 @@
+
+首先，建立一个meizhuosignsql的数据库
+
+然后。。。。。。
+
+create table numbermessage(  name varchar(16) not null,   phone int(8) not null,       tmtimes int(16) not null,    lmtimes int (16) not null,   historyts int(32) not null,  finaldata varchar(30) not null,      wwords varchar(64) not null  );
+
+
+create table signlog(  id int primary key auto_increment,   name varchar(16) not null,   signdata varchar(30) not null );
+
+
+create table  admin( name varchar(32) not null,passw varchar(64) not null );
+
+insert into admin (name,passw) values ('admin','21232f297a57a5a743894a0e4a801fc3');

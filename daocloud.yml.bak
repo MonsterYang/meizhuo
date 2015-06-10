@@ -1,0 +1,19 @@
+££which build image you want to use, you can select one from daocloud support list
+image: daocloud/ci-golang:1.4
+
+££specify list of services you want to use during your test
+services:
+  - mysql
+  - mongodb
+
+££specify environment variables 
+env:
+  - GOPATH = /go
+  - MY_ENV = abc
+
+££which scripts you want to run for test
+script:
+  - sudo apt-get update
+  - sudo apt-get -y install bzr
+  - go get -t ./...
+  - go test your-code
