@@ -3,7 +3,7 @@
 # VERSION       2.2
 
 # use the ubuntu base image provided by dotCloud
-FROM ubuntu
+FROM meizhuo
 
 MAINTAINER Victor Coisne victor.coisne@dotcloud.com
 
@@ -18,7 +18,7 @@ RUN apt-get install -y memcached
 ENTRYPOINT ["memcached"]
 
 # run memcached as the daemon user
-USER daemon
+USER yxt
 
 # expose memcached port
 EXPOSE 11211
