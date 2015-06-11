@@ -91,7 +91,7 @@ var timer=setInterval(clock,100);
 			  <li><a href="ad_membertable.php" target="iframe1">成员信息列表</a></li>
 			</ul>
 			<div class="return"><a href="#">返回签到页面</a></div>
-			<ul><li><a href="home.php">返回首页</a></li></ul>
+			<ul><li><a href="index.php">返回首页</a></li></ul>
 		</div>
 		<div class="clockBar"> 
 			<div id="clock1" class="clock1"></div>

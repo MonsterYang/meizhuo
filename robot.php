@@ -302,7 +302,7 @@
 					if(strlen($t)==27){
 						if($data[26]==$t[26]){
 							//$fdata->free();
-							//header("Refresh: 0;url=http://localhost/meizhuosignsystem/home.php");
+							//header("Refresh: 0;url=http://localhost/meizhuosignsystem/index.php");
 							//die("<script type='text/javascript'>alert('已经签过到啦！                                                         上次签到时间：$data[0]')</script>");
 							return $data;//已经签过到   返回最后一次签到时间
 						}

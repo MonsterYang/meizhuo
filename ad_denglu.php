@@ -102,7 +102,7 @@ var timer=setInterval(clock,100);
 			管理员密码：<input class="root" type = "password" name = "password"/><br/>
 			<input class="inputstyle" type = "reset" value = "重置"/>
 			<input class="inputstyle" type = "submit" value = "登陆"/><br/>
-			<a href="home.php"><span class="inputstyle">返回</span></a>
+			<a href="index.php"><span class="inputstyle">返回</span></a>
 		</form>	
     </div>
    	<div class="clockstyle">

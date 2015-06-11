@@ -17,16 +17,16 @@
 		$b=$a->signsystem($key);//调用服务进行签到
     if(is_string($b)){
       sqlclose();
-      header("Location:home.php?code=1&time=$b");
+      header("Location:index.php?code=1&time=$b");
       //die("<script type='text/javascript'>alert('您已经签到啦！上次签到时间：$b')</script>");
     }elseif($b==0){
       sqlclose();
-      //header("Refresh: 0;url=http://localhost/meizhuosignsystem/home.php");
-      header("Location:home.php?code=0");
+      //header("Refresh: 0;url=http://localhost/meizhuosignsystem/index.php");
+      header("Location:index.php?code=0");
       //die("<script type='text/javascript'>alert('数据库出错')</script>");
     }elseif($b==2){
       sqlclose();
-      header("Location:home.php?code=2");
+      header("Location:index.php?code=2");
       //die("<script type='text/javascript'>alert('数据库找不到您的信息，请确定输入..')</script>");
     }elseif($b==1){
       sqlclose();

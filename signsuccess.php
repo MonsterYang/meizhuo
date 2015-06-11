@@ -76,7 +76,7 @@ var timer=setInterval(clock,100);
 			<input class="datenum" type="text" name="d" value="<?php  echo $d; ?>"/>日&nbsp;-
 			前<input class="datenum" type="text" name="ds" value="7"/>天<br />
 			<input class="inputstyle" type="submit" value="查看"/><br />
-			<a href="home.php"><span class="inputstyle">返回</span></a>
+			<a href="index.php"><span class="inputstyle">返回</span></a>
 		</form>		
     </div>
    	<div class="clockstyle">
